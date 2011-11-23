@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/sweed/.swvim/.vim'
+let g:netrw_dirhist_2='/home/sweed/.swvim'
+let g:netrw_dirhist_3='/home/sweed/.swvim/.vim'
+let g:netrw_dirhist_4='/home/sweed/.swvim'
+let g:netrw_dirhist_5='/home/sweed/.vim'
+let g:netrw_dirhist_6='/home/sweed'
+let g:netrw_dirhist_7='/home/sweed/.swvim'
+let g:netrw_dirhist_8='/home/sweed/.vim'
+let g:netrw_dirhist_9='/home/sweed/projects/band_system'
