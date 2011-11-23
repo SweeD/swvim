@@ -2,7 +2,7 @@
 current_dir=$(pwd)
 script_dir=$(dirname $0)
 
-#for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
+for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
 ln -s $script_dir/vim ~/.vim
 ln -s $script_dir/swvimrc ~/.vimrc
 
