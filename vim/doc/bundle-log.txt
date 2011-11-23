@@ -1,0 +1,52 @@
+*bundle-log.txt*                   Bundle Install Log
+
+
+Logs bundle install activity. Also see the list of installed |bundles|.
+
+Mi 23. Nov 22:22:55 CET 2011 by vim-update-bundles 0.8
+ Add |command-t|                1.2.1-15-gd563170  git://git.wincent.com/command-t.git
+   1 bundle added
+
+Mi 23. Nov 22:25:23 CET 2011 by vim-update-bundles 0.8
+ Add |vim-pathogen|             v2.0-17-gab64b4d   https://github.com/tpope/vim-pathogen.git
+   1 bundle added
+
+Mi 23. Nov 22:34:45 CET 2011 by vim-update-bundles 0.8
+ Aborted: BundleCommand cd command-t && rake make in /home/sweed/.swvim/.vim/bundle failed!
+
+Mi 23. Nov 22:35:44 CET 2011 by vim-update-bundles 0.8
+ Aborted: BundleCommand cd bundle/command-t && rake make in /home/sweed/.swvim/.vim/bundle failed!
+
+Mi 23. Nov 22:36:26 CET 2011 by vim-update-bundles 0.8
+ Add |vim-rails|                v4.4-16-gcccd2ad   git://github.com/tpope/vim-rails.git
+   1 bundle added
+
+Mi 23. Nov 22:39:41 CET 2011 by vim-update-bundles 0.8
+ Aborted: BundleCommand gem install vim-ruby --remote && vim-ruby-install.rb in /home/sweed/.swvim/.vim/bundle failed!
+
+Mi 23. Nov 22:41:49 CET 2011 by vim-update-bundles 0.8
+ Add |vim-ruby|                 vim7.3-84-gf265e6b git://github.com/vim-ruby/vim-ruby.git
+   1 bundle added
+
+Mi 23. Nov 22:46:55 CET 2011 by vim-update-bundles 0.8
+ Add |vim-colors-solarized|     528a59f26d122      git://github.com/altercation/vim-colors-solarized.git
+   1 bundle added
+
+Mi 23. Nov 23:17:26 CET 2011 by vim-update-bundles 0.8
+ Add |vim-commentary|           v1.1-3-g62b7258    git://github.com/tpope/vim-commentary.git
+   1 bundle added
+
+Mi 23. Nov 23:18:15 CET 2011 by vim-update-bundles 0.8
+ Add |vim-fugitive|             v1.2-75-g1b7e407   https://github.com/tpope/vim-fugitive.git
+   1 bundle added
+
+Mi 23. Nov 23:20:37 CET 2011 by vim-update-bundles 0.8
+ bundle for vim-fugitive changed from https://github.com/tpope/vim-fugitive.git to git://github.com/tpope/vim-fugitive.git
+
+ Del |vim-fugitive|             v1.2-75-g1b7e407
+ Add |vim-fugitive|             v1.2-75-g1b7e407   git://github.com/tpope/vim-fugitive.git
+   1 bundle added, 1 bundle removed
+
+Mi 23. Nov 23:21:04 CET 2011 by vim-update-bundles 0.8
+   no updates
+
