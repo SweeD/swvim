@@ -1,6 +1,18 @@
 #!/bin/sh
-current_dir=$(pwd)
-script_dir=$(dirname $0)
+
+# Returns the scripts locations path
+currentscriptpath()
+{
+  local fullpath=`echo "$(readlink -f $0)"`
+  local fullpath_length=`echo ${#fullpath}`
+  local scriptname="$(basename $0)"
+  local scriptname_length=`echo ${#scriptname}`
+  local result_length=`echo $fullpath_length - $scriptname_length - 1 | bc`
+  local result=`echo $fullpath | head -c $result_length`
+  echo $result
+}
+
+script_dir=`currentscriptpath`
 
 echo "Saving the old .vim .vimrc .gvimrc with .old addition...Done"
 for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
