@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+snippet field
+	.field
+	  =f.label :${1}, t('${2}.form.${3}')
+		%br
+		=f.${4:text_field} :${5:$1}
+		=f.error_message_on :${6:$1}
