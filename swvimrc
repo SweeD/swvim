@@ -6,8 +6,14 @@ set nocompatible
 " Bundle: git://github.com/tpope/vim-rails.git
 " Bundle: git://github.com/vim-ruby/vim-ruby.git
 " Bundle: git://github.com/altercation/vim-colors-solarized.git
+" Bundle: git://github.com/tpope/vim-git.git
 " Bundle: git://github.com/tpope/vim-fugitive.git
 " Bundle: git://github.com/tpope/vim-commentary.git
+" Bundle: git://github.com/wycats/nerdtree.git
+" Bundle: git://github.com/pangloss/vim-javascript.git
+" Bundle: git://github.com/msanders/snipmate.vim.git
+" Bundle: git://github.com/kchmck/vim-coffee-script.git
+" Bundle: git://github.com/ervandew/supertab.git
 
 " Setup the bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim

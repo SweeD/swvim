@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+snippet %=
+	<%= ${1} %>
+snippet %
+	<% ${1} %>
+snippet if
+	<% if ${1} %>
+		${2}
+	<% end %>
+snippet ife
+	<% if ${1} %>
+		${2}
+	<% else %>
+		${3}
+	<% end %>
+snippet unl
+	<% unless ${1} %>
+		${2}
+	<% end %>
+snippet ol
+	<ol>
+	  ${1}
+	</ol>
+snippet li
+	<li>${1}</li>
+snippet span
+	<span>${1}</span>
+snippet div
+	<div>
+	  ${1}
+	</div>
