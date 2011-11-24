@@ -24,7 +24,7 @@ call pathogen#infect()
 set t_Co=256
 let g:solarized_termcolors=256
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 " Leader setting
@@ -52,7 +52,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/*,temp_gems/*,
 
 " Status bar
 set laststatus=2
@@ -166,7 +166,10 @@ map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
+
+" Starts the current spec
+map <leader>r :!rspec %<cr>
 
 " Commentary
 map <leader>cc \\\
