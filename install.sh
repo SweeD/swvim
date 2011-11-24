@@ -1,5 +1,5 @@
 #!/bin/sh
-script_dir=$(pwd)
+script_dir="$( cd "$( dirname "$0" )" && pwd )"
 
 echo "Saving the old .vim .vimrc .gvimrc with .old addition...Done"
 for i in ~/.vim ~/.vimrc ~/.gvimrc; do [ -e $i ] && mv $i $i.old; done
