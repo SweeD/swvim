@@ -1,6 +1,6 @@
 # Swvim
 
-Swvim is a little vim package. It's lightweight and rails development optimized.
+Swvim is a little vim package. It's lightweight and optimized for rails development in terminal vim.
 
 ## Setup
 
