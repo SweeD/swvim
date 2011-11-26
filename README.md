@@ -19,3 +19,8 @@ Now you have to follow these steps to finish the installation:
     vim-update-bundles
 
 And now you're ready to go!
+
+
+## Customization
+
+You can add your own configurations in ~/.vimrc.local to customize the config to your needs.
