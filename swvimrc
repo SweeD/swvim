@@ -175,3 +175,8 @@ map <leader>r :!rspec %<cr>
 map <leader>cc \\\
 map <leader>cf \\
 
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
