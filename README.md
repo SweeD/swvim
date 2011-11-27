@@ -24,3 +24,8 @@ And now you're ready to go!
 ## Customization
 
 You can add your own configurations in ~/.vimrc.local to customize the config to your needs.
+
+## Travis Build Status
+
+[![Build
+Status](https://secure.travis-ci.org/[SweeD]/[swvim].png)](http://travis-ci.org/[SweeD]/[swvim])
