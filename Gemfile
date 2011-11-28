@@ -1,0 +1,3 @@
+source :rubyforge
+
+gem 'rake'
