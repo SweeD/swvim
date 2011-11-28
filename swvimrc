@@ -172,8 +172,7 @@ map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>r :!rspec %<cr>
 
 " Commentary
-map <leader>cc \\\
-map <leader>cf \\
+map <leader>c \\
 
 
 " Include user's local vim config
