@@ -7,7 +7,8 @@ You need a vim version with ruby interpreter enabled. (for Command-T)
 Also be sure that you have 256 colors enabled in your terminal.
 
 For example:
-```shell
+
+```bash
 ➜  ~  tput colors
 256
 
