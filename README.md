@@ -2,6 +2,19 @@
 
 Swvim is a little vim package. It's lightweight and optimized for rails development in terminal vim.
 
+## Requirements
+You need a vim version with ruby interpreter enabled. (for Command-T)
+Also be sure that you have 256 colors enabled in your terminal.
+
+For example:
+```shell
+➜  ~  tput colors
+256
+
+➜  ~  echo $TERM
+xterm-256color
+```
+
 ## Setup
 
 Be sure that you don't have any .vim.old .vimrc.old .gvimrc.old in your
