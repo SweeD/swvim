@@ -1,3 +1,4 @@
+set shell=/bin/sh
 set nocompatible
 
 " Bundles for the vim plugins
