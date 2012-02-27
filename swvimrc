@@ -178,6 +178,17 @@ map <leader>c \\
 " NERDTree - toggle
 map <leader>n :NERDTreeToggle<cr>
 
+function ToggleBackground ()
+  if &background == 'light'
+    colorscheme solarized
+    set background=dark
+  else
+    colorscheme solarized
+    set background=light
+  endif
+endfunction
+
+map <leader>z :call ToggleBackground()<cr>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
