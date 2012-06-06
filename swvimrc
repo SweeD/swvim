@@ -179,6 +179,9 @@ map <leader>c \\
 " NERDTree - toggle
 map <leader>n :NERDTreeToggle<cr>
 
+" Open the current buffer in the NERDTree
+map <C-N> :NERDTreeFind<cr>
+
 function ToggleBackground ()
   if &background == 'light'
     colorscheme solarized
