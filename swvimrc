@@ -194,6 +194,9 @@ endfunction
 
 map <leader>z :call ToggleBackground()<cr>
 
+" ctags tags file generation for the current directory
+map <F8> :!ctags -R .<CR>
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
