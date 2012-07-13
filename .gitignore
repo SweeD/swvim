@@ -3,3 +3,4 @@ vim/bundle
 vim/doc
 vim/.netrwhist
 vim/backup/*.swp
+vim/ftplugin
