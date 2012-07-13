@@ -16,6 +16,8 @@ set nocompatible
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
 " Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/groenewege/vim-less.git
+" Bundle: git://github.com/hallettj/jslint.vim.git
+" BundleCommand: cd ~/.vim/bundle/jslint.vim && rake install
 
 " Setup the bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
