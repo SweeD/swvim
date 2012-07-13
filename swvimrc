@@ -156,6 +156,10 @@ map <C-L> <C-W><C-L>
 map <C-J> <C-W><C-J>
 map <C-K> <C-W><C-K>
 
+" Vertical split right and split below
+set splitright
+set splitbelow
+
 " Open files with <leader>f
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 
@@ -184,6 +188,9 @@ map <leader>n :NERDTreeToggle<cr>
 " Open the current buffer in the NERDTree
 map <C-N> :NERDTreeFind<cr>
 
+" ctags tags file generation for the current directory
+map <F8> :!ctags -R .<CR>
+
 function ToggleBackground ()
   if &background == 'light'
     colorscheme solarized
@@ -195,9 +202,6 @@ function ToggleBackground ()
 endfunction
 
 map <leader>z :call ToggleBackground()<cr>
-
-" ctags tags file generation for the current directory
-map <F8> :!ctags -R .<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
