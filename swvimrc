@@ -202,6 +202,15 @@ endfunction
 
 map <leader>z :call ToggleBackground()<cr>
 
+
+" Copy the current line into the clipboard
+" Normal mode: <leader>t
+map <C-C> "+yy
+
+" Copy the current selection into the clipboard
+" Visual mode: v
+vmap <C-C> "+y
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
