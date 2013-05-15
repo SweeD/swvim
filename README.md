@@ -33,7 +33,8 @@ Then do
     ./install.sh
 
 Now you have to follow these steps to finish the installation:
-
+    
+    gem install rake
     gem install vim-update-bundles
     vim-update-bundles
 
