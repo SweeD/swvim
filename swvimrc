@@ -211,6 +211,9 @@ map <C-C> "+yy
 " Visual mode: v
 vmap <C-C> "+y
 
+" Change Rubys :symbol => 'aaaa' to symbol: 'aaaa'
+map <leader>s xea:<esc>ldf>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
