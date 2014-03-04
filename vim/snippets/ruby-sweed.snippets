@@ -1,8 +1,19 @@
 #!/usr/bin/env ruby
 
-snippet field
-	.field
-	  =f.label :${1}, t('${2}.form.${3}')
-		%br
-		=f.${4:text_field} :${5:$1}
-		=f.error_message_on :${6:$1}
+snippet ##
+	##########${2:}
+	## ${1:name} ##
+	##########$2
+	${3:}
+snippet context
+	context '${1:}' do
+		${2:}
+	end # context '$1'
+snippet describe
+	describe '${1:}' do
+		${2:}
+	end # describe '$1'
+snippet define
+	def ${1:}
+		${2:}
+	end # def $1
