@@ -17,8 +17,6 @@ set nocompatible
 " Bundle: git://github.com/nono/vim-handlebars.git
 " Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/groenewege/vim-less.git
-" Bundle: git://github.com/hallettj/jslint.vim.git
-" BundleCommand: cd ~/.vim/bundle/jslint.vim && rake install
 " Bundle: git://github.com/tpope/vim-surround.git
 
 " Setup the bundles
