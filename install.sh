@@ -9,5 +9,5 @@ ln -s $script_dir/vim ~/.vim
 ln -s $script_dir/swvimrc ~/.vimrc
 
 echo "Now, you're almost finished. Just follow these following steps and you're ready to go:\n"
-echo "\tgem install vim-update-bundles"
-echo "\tvim-update-bundles"
+echo "\tbundle"
+echo "\tRUBYOPT='-E utf-8' vim-update-bundles"
