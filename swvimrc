@@ -63,10 +63,7 @@ set laststatus=2
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
-
-" Command-T configuration
-" let g:CommandTMaxHeight=20
+" set noequalalways
 
 " Remember last location in file
 if has("autocmd")
@@ -104,15 +101,15 @@ filetype plugin indent on
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
-" map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>t
-" map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
-" cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -159,21 +156,24 @@ map <C-K> <C-W><C-K>
 set splitright
 set splitbelow
 
+" Open files in buffer with <leader>b
+map <leader>b :CtrlPBuffer<cr>
+
 " Open files with <leader>f
-" map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>f :CtrlP<cr>
 
 " Open files, limited to the directory of the current file, with <leader>gf
 " This requires the %% mapping found below.
-" map <leader>gf :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>gf :CtrlP %%<cr>
 
 " Open files limited to a specific rails-path
-"map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-"map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-"map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-"map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-"map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-"map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-"map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
+map <leader>gv :CtrlP app/views<cr>
+map <leader>gc :CtrlP app/controllers<cr>
+map <leader>gm :CtrlP app/models<cr>
+map <leader>gh :CtrlP app/helpers<cr>
+map <leader>gl :CtrlP lib<cr>
+map <leader>gp :CtrlP public<cr>
+map <leader>gs :CtrlP spec<cr>
 
 " Commentary
 map <leader>c \\
