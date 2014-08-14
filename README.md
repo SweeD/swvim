@@ -4,10 +4,6 @@ Swvim is a little vim package. It's lightweight and optimized for rails developm
 
 ## Requirements
 
-```bash
-ruby 2.1.2
-```
-
 You need a vim version with ruby interpreter enabled. (for Command-T)
 Also be sure that you have 256 colors enabled in your terminal.
 
@@ -34,9 +30,8 @@ Then do
 
 Now you have to follow these steps to finish the installation:
 
-    gem install rake
-    gem install vim-update-bundles
-    vim-update-bundles
+    bundle
+    RUBYOPT='-E utf-8' vim-update-bundles
 
 And now you're ready to go!
 
