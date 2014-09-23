@@ -17,6 +17,7 @@ set nocompatible
 " Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/groenewege/vim-less.git
 " Bundle: git://github.com/tpope/vim-surround.git
+" Bundle: git://github.com/gaogao1030/vim-slimbars.git
 
 " Setup the bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
