@@ -206,6 +206,10 @@ map <C-C> "+yy
 " Visual mode: v
 vmap <C-C> "+y
 
+" Paste from the clipboard (normal and visual)
+map <C-V> "+p
+vmap <C-V> "+p
+
 " Change Rubys :symbol => 'aaaa' to symbol: 'aaaa'
 map <leader>s xea:<esc>ldf>
 
