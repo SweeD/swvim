@@ -2,6 +2,8 @@ set shell=/bin/sh
 set nocompatible
 
 " Bundles for the vim plugins
+" Bundle: git://github.com/tomtom/tlib_vim.git
+" Bundle: git://github.com/MarcWeber/vim-addon-mw-utils.git
 " Bundle: git://github.com/kien/ctrlp.vim.git
 " Bundle: git://github.com/tpope/vim-rails.git
 " Bundle: git://github.com/vim-ruby/vim-ruby.git
@@ -11,7 +13,7 @@ set nocompatible
 " Bundle: git://github.com/tpope/vim-commentary.git
 " Bundle: git://github.com/wycats/nerdtree.git
 " Bundle: git://github.com/pangloss/vim-javascript.git
-" Bundle: git://github.com/msanders/snipmate.vim.git
+" Bundle: git://github.com/garbas/vim-snipmate.git
 " Bundle: git://github.com/kchmck/vim-coffee-script.git
 " Bundle: git://github.com/nono/vim-handlebars.git
 " Bundle: git://github.com/ervandew/supertab.git
