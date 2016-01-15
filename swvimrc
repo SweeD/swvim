@@ -37,6 +37,7 @@ colorscheme solarized
 " Leader setting
 let mapleader = ","
 
+set relativenumber
 set number
 set ruler
 
