@@ -37,4 +37,4 @@ And now you're ready to go!
 
 ## Customization
 
-You can add your own configurations in ~/.vimrc.local to customize the config to your needs.
+You can add your own configurations in `~/.vimrc.local` to customize the config to your needs.
