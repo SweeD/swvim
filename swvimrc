@@ -24,6 +24,8 @@ set nocompatible
 " Bundle: git://github.com/fatih/vim-go.git
 " Bundle: git://github.com/xolox/vim-notes.git
 " Bundle: git://github.com/xolox/vim-misc.git
+" Bundle: git://github.com/elixir-lang/vim-elixir.git
+" Bundle: git://github.com/avdgaag/vim-phoenix.git
 
 " Setup the bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
