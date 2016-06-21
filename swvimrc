@@ -220,7 +220,7 @@ map <leader>gp :CtrlP public<cr>
 map <leader>gs :CtrlP spec<cr>
 
 " Commentary
-map <leader>c \\
+map <leader>c :Commentary<cr>
 
 " NERDTree - toggle
 map <leader>n :NERDTreeToggle<cr>
