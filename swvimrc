@@ -14,7 +14,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'wycats/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
@@ -31,6 +31,9 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'avdgaag/vim-phoenix'
 Plug 'tpope/vim-endwise'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -68,6 +71,17 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
+
+" Setup syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:airline_powerline_fonts = 1
 
 " Setup FZF
 let g:fzf_action = {
@@ -152,10 +166,6 @@ set wildignore+=*.swp,*~,._*
 " Disable osx index files
 set wildignore+=.DS_Store
 
-" Status bar
-set laststatus=2
-set noequalalways
-
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -201,10 +211,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
 
 " Use modeline overrides
 set modeline
