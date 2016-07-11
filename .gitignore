@@ -6,3 +6,4 @@ vim/backup/*.swp
 vim/ftplugin
 vim/Trashed-Bundles
 vim/backup/*.swo
+vim/plugged

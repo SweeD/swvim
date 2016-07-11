@@ -8,6 +8,6 @@ echo "Create symbolic links to the Swvim - files for .vim and .vimrc...Done\n"
 ln -s $script_dir/vim ~/.vim
 ln -s $script_dir/swvimrc ~/.vimrc
 
-echo "Now, you're almost finished. Just follow these following steps and you're ready to go:\n"
-echo "\tbundle"
-echo "\tRUBYOPT='-E utf-8' vim-update-bundles"
+echo "To install the plugins go open vim and enter following:"
+echo ":PlugInstall"
+echo "and hit enter"

@@ -1,31 +1,36 @@
 set shell=/bin/sh
 set nocompatible
 
-" Bundles for the vim plugins
-" Bundle: git://github.com/tomtom/tlib_vim.git
-" Bundle: git://github.com/MarcWeber/vim-addon-mw-utils.git
-" Bundle: git://github.com/kien/ctrlp.vim.git
-" Bundle: git://github.com/tpope/vim-rails.git
-" Bundle: git://github.com/vim-ruby/vim-ruby.git
-" Bundle: git://github.com/altercation/vim-colors-solarized.git
-" Bundle: git://github.com/tpope/vim-git.git
-" Bundle: git://github.com/tpope/vim-fugitive.git
-" Bundle: git://github.com/tpope/vim-commentary.git
-" Bundle: git://github.com/wycats/nerdtree.git
-" Bundle: git://github.com/pangloss/vim-javascript.git
-" Bundle: git://github.com/garbas/vim-snipmate.git
-" Bundle: git://github.com/honza/vim-snippets.git
-" Bundle: git://github.com/kchmck/vim-coffee-script.git
-" Bundle: git://github.com/nono/vim-handlebars.git
-" Bundle: git://github.com/ervandew/supertab.git
-" Bundle: git://github.com/groenewege/vim-less.git
-" Bundle: git://github.com/tpope/vim-surround.git
-" Bundle: git://github.com/gaogao1030/vim-slimbars.git
-" Bundle: git://github.com/fatih/vim-go.git
-" Bundle: git://github.com/xolox/vim-notes.git
-" Bundle: git://github.com/xolox/vim-misc.git
-" Bundle: git://github.com/elixir-lang/vim-elixir.git
-" Bundle: git://github.com/avdgaag/vim-phoenix.git
+call plug#begin('~/.vim/plugged')
+
+" vim plugins
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'wycats/nerdtree'
+Plug 'pangloss/vim-javascript'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nono/vim-handlebars'
+Plug 'ervandew/supertab'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-surround'
+Plug 'gaogao1030/vim-slimbars'
+Plug 'fatih/vim-go'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'elixir-lang/vim-elixir'
+Plug 'avdgaag/vim-phoenix'
+
+call plug#end()
 
 " Setup the bundles
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -66,14 +71,61 @@ set smartcase
 " Tab completion
 set wildmode=list:longest,list:full
 
-" Setup ctrlp
-hi def link CtrlPMatch CursorLine
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_switch_buffer = 'Et'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git\|node_modules\|bin\|\.hg\|\.svn\|build\|log\|coverage\|doc\|tmp\|public/assets\|Android',
-  \ 'file': '\.jpg$\|\.exe$\|\.so$\|tags$\|\.dll$'
-  \ }
+" Setup FZF
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" Jump to existing buffers
+let g:fzf_buffers_jump = 1
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Open files with <leader>f
+map <leader>f :Files<cr>
+
+" Open tags with <leader>t
+map <leader>t :Tags<cr>
+
+" Open marks with <leader>m
+map <leader>m :Marks<cr>
+
+" Open files in buffer with <leader>b
+map <leader>b :Buffers<cr>
+
+" Open files, limited to the directory of the current file, with <leader>gf
+" This requires the %% mapping found below.
+map <leader>gf :Files %%<cr>
+
+" Open files limited to a specific rails-path
+map <leader>gv :Files app/views<cr>
+map <leader>gc :Files app/controllers<cr>
+map <leader>gm :Files app/models<cr>
+map <leader>gh :Files app/helpers<cr>
+map <leader>gl :Files lib<cr>
+map <leader>gp :Files public<cr>
+map <leader>gs :Files spec<cr>
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -199,25 +251,6 @@ map <leader>d :cn<cr>
 " Vertical split right and split below
 set splitright
 set splitbelow
-
-" Open files in buffer with <leader>b
-map <leader>b :CtrlPBuffer<cr>
-
-" Open files with <leader>f
-map <leader>f :CtrlP<cr>
-
-" Open files, limited to the directory of the current file, with <leader>gf
-" This requires the %% mapping found below.
-map <leader>gf :CtrlP %%<cr>
-
-" Open files limited to a specific rails-path
-map <leader>gv :CtrlP app/views<cr>
-map <leader>gc :CtrlP app/controllers<cr>
-map <leader>gm :CtrlP app/models<cr>
-map <leader>gh :CtrlP app/helpers<cr>
-map <leader>gl :CtrlP lib<cr>
-map <leader>gp :CtrlP public<cr>
-map <leader>gs :CtrlP spec<cr>
 
 " Commentary
 map <leader>c :Commentary<cr>
