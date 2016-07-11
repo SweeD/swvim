@@ -29,13 +29,10 @@ Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
 Plug 'elixir-lang/vim-elixir'
 Plug 'avdgaag/vim-phoenix'
+Plug 'tpope/vim-endwise'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
-
-" Setup the bundles
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-" Bundle: tpope/vim-pathogen
-call pathogen#infect()
 
 " Set solarized-colors
 set t_Co=256
@@ -50,6 +47,7 @@ let mapleader = ","
 set relativenumber
 set number
 set ruler
+set autoindent
 
 " Set encoding
 set encoding=utf-8
