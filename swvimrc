@@ -83,6 +83,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
 
+" Show airline without splits, as well
+set laststatus=2
+
 " Setup FZF
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -351,8 +354,6 @@ function! RunTests(filename)
         end
     end
 endfunction
-
-
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
