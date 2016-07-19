@@ -4,6 +4,9 @@ Swvim is a little vim package. It's lightweight and optimized for rails developm
 
 ## Requirements
 
+To use airline with the current theme and powerline fonts, please
+install [powerline-fonts](https://github.com/powerline/fonts).
+
 Just be sure that you have 256 colors enabled in your terminal.
 
 For example:
