@@ -253,6 +253,10 @@ map <C-L> <C-W><C-L>
 map <C-J> <C-W><C-J>
 map <C-K> <C-W><C-K>
 
+" Move blocks in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Go next in bufferlist
 map <leader>d :cn<cr>
 
