@@ -10,17 +10,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
-Plug 'altercation/vim-colors-solarized'
+Plug 'jonathanfilip/vim-lucius'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'kchmck/vim-coffee-script'
 Plug 'nono/vim-handlebars'
-Plug 'ervandew/supertab'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-surround'
 Plug 'gaogao1030/vim-slimbars'
@@ -35,15 +33,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ngmy/vim-rubocop'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
+Plug 'freitass/todo.txt-vim'
 
 call plug#end()
 
 " Set solarized-colors
 set t_Co=256
-let g:solarized_termcolors=256
 syntax enable
 set background=light
-colorscheme solarized
+colorscheme lucius
+" let g:solarized_termcolors=256
 
 " Leader setting
 let mapleader = ","
@@ -69,9 +71,19 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+map <leader>/ :noh<CR>
 
 " Tab completion
 set wildmode=list:longest,list:full
+
+" Tweak netrw
+let g:netrw_banner=0       " disable banner
+let g:netrw_browsesplit=4  " open in prior window
+let g:netrw_altv=1         " open splits to the right
+let g:netrw_liststyle=3    " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" More mappings under |netrw-browse-maps|
 
 " Setup syntastic
 set statusline+=%#warningmsg#
@@ -83,6 +95,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:airline_powerline_fonts = 1
+
+" Annoying ERB warning silent
+let g:syntastic_eruby_ruby_quiet_messages =
+  \ {'regex': 'possibly useless use .* void context'}
 
 " Show airline without splits, as well
 set laststatus=2
@@ -267,21 +283,15 @@ set splitbelow
 " Commentary
 map <leader>c :Commentary<cr>
 
-" NERDTree - toggle
-map <leader>n :NERDTreeToggle<cr>
-
-" Open the current buffer in the NERDTree
-map <C-N> :NERDTreeFind<cr>
-
 " ctags tags file generation for the current directory
 map <F8> :!ctags -R .<CR>
 
 function ToggleBackground ()
   if &background == 'light'
-    colorscheme solarized
+    colorscheme lucius
     set background=dark
   else
-    colorscheme solarized
+    colorscheme lucius
     set background=light
   endif
 endfunction
@@ -304,12 +314,32 @@ vmap <leader>v "+p
 " Change Rubys :symbol => 'aaaa' to symbol: 'aaaa'
 map <leader>s xea:<esc>ldf>
 
+"""""""""""""""""""""
+" TODOS
+"""""""""""""""""""""
+map <Leader>T :call ToDoSwitch()<CR>
+
+function! ToDoSwitch()
+  let in_todo_file = match(expand("%"), 'todo.txt') != -1
+  if in_todo_file
+    :normal ,,
+  else
+    :e todo.txt<CR>
+  endif
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>r :call RunTestFile()<cr>
-map <leader>R :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+
+map <Leader>r :call RunCurrentSpecFile()<CR>
+map <Leader>R :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+" map <leader>r :call RunTestFile()<cr>
+" map <leader>R :call RunNearestTest()<cr>
+" map <leader>a :call RunTests('')<cr>
 
 function! RunTestFile(...)
     if a:0
