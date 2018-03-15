@@ -328,6 +328,28 @@ function! ToDoSwitch()
   endif
 endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trailblazer related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <Leader>tc :call ToggleCellAndView()<CR>
+" Toggle between cell and view
+
+function! ToggleCellAndView()
+  let in_cell = match(expand("%"), '/cell/') != -1
+
+  if in_cell
+    let file_destination = substitute(expand('%'), 'cell', 'view', '')
+    let file_destination = substitute(file_destination, '.rb', '.erb', '')
+  else
+    let file_destination = substitute(expand('%'), 'view', 'cell', '')
+    let file_destination = substitute(file_destination, '.erb', '.rb', '')
+  endif
+
+  :execute 'edit' file_destination
+endfunction
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
