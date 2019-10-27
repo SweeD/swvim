@@ -42,6 +42,9 @@ set t_Co=256
 syntax enable
 set background=light
 colorscheme lucius
+set term=screen-256color
+set t_ut=
+let g:solarized_termcolors=256
 " let g:solarized_termcolors=256
 
 " Leader setting
@@ -177,6 +180,7 @@ set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Ignore node modules
 set wildignore+=node_modules/*
+set wildignore+=/node_modules/*
 
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
@@ -354,10 +358,14 @@ endfunction
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <Leader>r :call RunCurrentSpecFile()<CR>
-map <Leader>R :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>rr :call RunCurrentSpecFile()<CR>
+map <Leader>rR :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
+map <Leader>ra :call RunAllSpecs()<CR>
+map <Leader>rf :Dispatch script/test --only-failures %<CR>
+map <Leader>rF :Dispatch script/test --only-failures spec<CR>
+map <Leader>rn :Dispatch script/test --next-failure %<CR>
+map <Leader>rN :Dispatch script/test --next-failure spec<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
