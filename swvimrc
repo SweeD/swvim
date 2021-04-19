@@ -40,7 +40,7 @@ call plug#end()
 " Set solarized-colors
 set t_Co=256
 syntax enable
-set background=light
+set background=dark
 colorscheme lucius
 set term=screen-256color
 set t_ut=
