@@ -285,6 +285,9 @@ set splitbelow
 " Commentary
 map <leader>c :Commentary<cr>
 
+" Setup snipmate parser
+let g:snipMate = { 'snippet_version' : 1  }
+
 " ctags tags file generation for the current directory
 map <F8> :!ctags -R .<CR>
 
